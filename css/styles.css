@@ -150,6 +150,12 @@ section {
 .dark-mode .btn-close {
   filter: invert(1);
 }
+.custom-nav .btn.d-md-none {
+  color: var(--text);
+}
+.custom-nav .btn.d-md-none:hover {
+  color: var(--primary);
+}
 /* ==========================================================================
    4. HERO 
    ========================================================================== */
@@ -517,7 +523,6 @@ section {
   color: var(--muted);
   opacity: 1;
 }
-
 
 
 
