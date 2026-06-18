@@ -16,5 +16,8 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
     "swiper": "^12.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
