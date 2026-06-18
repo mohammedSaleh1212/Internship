@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const projects = [
+        {
+      icon: "bi-cart",
+      title: "E-Commerce website",
+      description: "Leveraged Dummyjson API to create a responsive e-commerce website with product listing, search, and category filtering features.",
+      tag: "AI Commerce"
+    },
     {
       icon: "bi-robot",
       title: "AI Real Estate Assistant",
@@ -19,17 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Automated lead collection, notifications, reporting, and data synchronization between multiple business systems.",
       tag: "Automation"
     },
-    {
-      icon: "bi-cart",
-      title: "E-Commerce Chat Assistant",
-      description: "Conversational shopping assistant capable of answering product questions, recommending items, and guiding purchases.",
-      tag: "AI Commerce"
-    },
+
     {
       icon: "bi-code-square",
-      title: "Full Stack Web Applications",
-      description: "Modern web applications built using React, TypeScript, Node.js, Express, and MySQL.",
-      tag: "Full Stack"
+      title: "Desktop Application",
+      description: "Createda Desktop Application using QT and c++ for managing playstation Cafes, with features like inventory management, sales tracking, and customer management.",
+      tag: "Desktop App"
     },
     {
       icon: "bi-plug",
