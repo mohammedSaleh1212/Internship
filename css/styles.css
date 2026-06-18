@@ -1,0 +1,539 @@
+/* ==========================================================================
+   1. DESIGN TOKENS (VARIABLES)
+   ========================================================================== */
+:root {
+  --bg: #ffffff;
+  --surface: #f8f9fa;
+  --text: #111111;
+  --muted: #6c757d;
+  --input-bg: #f8f9fa;
+  --input-border: #e4e5e7;
+  --primary: #10b981;
+  --gradient-primary: linear-gradient(90deg, var(--primary), #34d399);
+  --gradient-hero: linear-gradient(135deg, #111111 0%, #22c55e 50%, #06b6d4 100%);
+  --gradient-soft: linear-gradient(90deg, #f8f9fa, #ffffff);
+
+  --glow: 0 0 30px rgba(34, 197, 94, 0.25);
+  --border: #e5e7eb;
+
+  --card-bg: #ffffff;
+  --card-title: #111111;
+
+  --nav-bg: #ffffff;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --section-spacing: 3rem;
+}
+
+.dark-mode {
+  --bg: #0f0f10;
+  --surface: #0f0f10;
+  --text: #f5f5f5;
+  --muted: #a1a1aa;
+
+  --input-bg: #0f0f10;
+  /* Darker than the card */
+  --input-border: #2a2a2e;
+
+  /* FIX: Ensured theme consistency for the primary color token */
+  --primary: #34d399;
+  --gradient-primary: linear-gradient(90deg, var(--primary), #ffffff);
+  --gradient-hero: linear-gradient(135deg, #ffffff 0%, var(--primary) 50%, #38bdf8 100%);
+  --glow: 0 0 35px rgba(52, 211, 153, 0.25);
+  --border: #2a2a2e;
+  --card-title: #ffffff;
+
+  --card-bg: #1a1a1d;
+  --nav-bg: #121214;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   2. BASE & GLOBAL TRANSITIONS
+   ========================================================================== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+
+body,
+nav,
+.card,
+section,
+footer,
+a,
+button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ==========================================================================
+   3. Layout
+   ========================================================================== */
+section {
+  padding-block: var(--section-spacing);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.hero-section {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top,
+      rgba(34, 197, 94, 0.08),
+      transparent 60%);
+}
+
+
+/*Navigation*/
+.custom-nav {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: var(--muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+/* ================= OFFCANVAS ================= */
+
+.offcanvas {
+  background-color: var(--card-bg);
+  color: var(--text);
+  border-right: 1px solid var(--border);
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.offcanvas-title {
+  color: var(--text);
+}
+
+/* Mobile menu links */
+.offcanvas-body a {
+  color: var(--muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+  text-decoration: none;
+
+}
+
+.offcanvas-body a:hover {
+  color: var(--primary);
+}
+
+/* Theme button inside offcanvas */
+.offcanvas .theme-toggle-btn {
+  width: auto;
+  align-self: flex-start;
+}
+
+/* Close button visibility in dark mode */
+.dark-mode .btn-close {
+  filter: invert(1);
+}
+/* ==========================================================================
+   4. HERO 
+   ========================================================================== */
+
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: var(--gradient-hero);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.avatar-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--gradient-hero);
+  filter: blur(24px);
+  opacity: 0.4;
+}
+
+.avatar-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--card-bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.social-link {
+  padding: 8px;
+  color: var(--muted);
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.social-link:hover {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+/* ==========================================================================
+   5. COMPONENTS (CARDS & ICONS)
+   ========================================================================== */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--text);
+
+}
+
+
+
+.card-title {
+  color: var(--card-title);
+  line-height: 1.3;
+}
+
+.card-description {
+  color: var(--muted);
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .08);
+}
+
+.project-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  font-size: 1.5rem;
+}
+
+.project-icon i {
+  color: #ffffff !important;
+
+}
+
+.project-tag {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   6. BUTTONS & HOVER ACTIONS
+   ========================================================================== */
+.btn-outline-modern {
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: transparent;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-modern:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--surface);
+}
+
+/* FIX: Complete structural reset to prevent native Bootstrap utility layout overrides */
+.btn-primary-modern {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  /* Slimmer button height */
+  border-radius: 0.5rem;
+  /* Match the inputs */
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+/* FIX: Solves button rendering issue on hover */
+.btn-primary-modern:hover {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
+  filter: brightness(0.92);
+  /* Darkens slightly instead of washing out color canvas */
+}
+.bg-surface { background-color: var(--surface); }
+
+/* ==========================================================================
+   7.  TYPOGRAPHY & UTILITIES
+   ========================================================================== */
+
+
+.text-muted {
+  color: var(--muted) !important;
+}
+
+.text-gradient-primary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-primary-modern {
+  color: var(--primary) ;
+  font-weight: 600;
+}
+
+.section-title {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 1rem;
+  cursor: default;
+  color: var(--primary)
+}
+
+.section-title .hover-char {
+  display: inline-block;
+  font-size: inherit;
+  font-weight: inherit;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+}
+
+.section-title .hover-space {
+  display: inline-block;
+  width: 0.25em;
+}
+
+.section-title .hover-char:hover {
+  transform: translateY(-6px);
+  color: var(--primary);
+}
+
+
+.cart-pill {
+  background-color: var(--nav-bg);
+  color: var(--text);
+  border-color: var(--border) !important;
+  box-shadow: var(--shadow);
+  font-size: 0.875rem;
+}
+
+/* Base Card & Hover Engine */
+.custom-product-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.custom-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  z-index: 10;
+}
+
+/* Image Presentation & Zoom */
+.card-image-container {
+  height: 200px;
+}
+
+.card-image-container img {
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-product-card:hover .card-image-container img {
+  transform: scale(1.08);
+}
+
+/* Typography Constraints */
+.product-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.product-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--card-title);
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8rem;
+}
+
+
+
+/* ==========================================================================
+   12. STAT CARDS (Extending Bootstrap .card)
+   ========================================================================== */
+.custom-stat-card {
+  background-color: var(--card-bg);
+  border-color: var(--border);
+  border-radius: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.custom-stat-card::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: var(--primary);
+  filter: blur(40px);
+  opacity: 0.15;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.custom-stat-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+.custom-stat-card:hover::before {
+  opacity: 0.35;
+  transform: scale(1.2);
+  /* Makes the glow expand slightly on hover */
+}
+
+.custom-stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--surface);
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+.stat-number {
+  color: var(--card-title);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* bootstrap override */
+
+.form-control,
+.form-select {
+  background-color: var(--input-bg) !important;
+  color: var(--text);
+  border: 1px solid var(--input-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--card-bg);
+  color: var(--text);
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.form-control::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+
+
+
+/* ==========================================================================
+    KEYFRAMES
+   ========================================================================== */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

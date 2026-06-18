@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Mohammed Saleh</title>
+  <script src="js/theme-init.js"></script>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav id="mainNav" class="navbar navbar-expand-md fixed-top custom-nav" >
+    <div class="container">
+      <a class="navbar-brand fw-bold text-gradient-primary" href="index.html">
+        Mohammed Saleh
+      </a>
+
+      <div class="d-none d-md-flex gap-4 align-items-center">
+        <a class="nav-link" href="portfolio.html">Portfolio</a>
+        <a class="nav-link" href="blog.html">Blog</a>
+        <a class="nav-link" href="products.html">Products</a>
+        <a class="nav-link" href="calculator.html">Calculator</a>
+        <a class="nav-link" href="consultation.html">Contact</a>
+      </div>
+
+      <div class="d-none d-md-flex gap-2">
+        <button class="btn social-link border-0 p-2 theme-toggle-btn  btn-outline-modern" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars fs-5 theme-toggle-icon "></i>
+        </button>
+      </div>
+
+      <button class="btn d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title fw-bold">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-3">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="products.html">Products</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="consultation.html">Contact</a>
+      <hr />
+      <button class="btn social-link border-0 p-2 theme-toggle-btn" aria-label="Toggle Theme">
+        <i class="bi bi-moon-stars fs-5 theme-toggle-icon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= NEW HERO SECTION ================= -->
+  <header class="hero-section">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+
+        <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-duration="900">
+          <h1 class="mt-4 display-4 fw-bold tracking-tight text-gradient-primary">
+            Hi, I'm Mohammed Saleh.<br>I build web apps.
+          </h1>
+          <p class="mt-3 fs-5 text-muted max-w-xl">
+          Software engineer specializing in complex automation systems, 
+  performant web applications, and robust, scalable architecture.
+          </p>
+
+          <div class="mt-4 d-flex flex-wrap align-items-center gap-3">
+
+            <a href="consultation.html" class="btn btn-primary-modern d-inline-flex align-items-center gap-2">
+              Get in touch <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#projects" class="btn btn-outline-modern">
+              View work
+            </a>
+          </div>
+
+          <div class="mt-4 d-flex align-items-center gap-2">
+            <a href="https://github.com/mohammedSaleh1212" aria-label="GitHub" class="social-link"><i class="bi bi-github fs-5"></i></a>
+            <a href="https://twitter.com/mohammedSaleh1212" aria-label="Twitter" class="social-link"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.linkedin.com/in/mohammad-saleh-312600282/" aria-label="LinkedIn" class="social-link"><i class="bi bi-linkedin fs-5"></i></a>
+            <a href="mailto:mohammedsaleh1999ms@gmail.com" aria-label="Email" class="social-link"><i class="bi bi-envelope fs-5"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 order-1 order-lg-2 d-flex justify-content-center" data-aos="zoom-in" data-aos-duration="900">
+          <div class="avatar-wrapper">
+            <div class="avatar-glow"></div>
+            <div class="avatar-circle">
+              <img src="assets/download.png" alt="MS">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="py-5 bg-surface">
+    <div class="container">
+
+      <!-- Centered Narrative -->
+      <div class="row justify-content-center text-center mb-5 pb-3">
+        <div class="col-lg-8">
+          <h2 class="section-title fw-bold mb-4" data-aos="fade-up" data-aos-duration="500">
+            About <span class="text-gradient-primary">Me</span>
+          </h2>
+          <p class="text-muted fs-5 mb-4" data-aos="fade-up" data-aos-duration="500">
+          I am a software engineer dedicated to architecting high-performance web applications and sophisticated automation systems.
+           My work bridges the gap between complex business logic and intuitive,
+            performant user interfaces, leveraging React and modern web technologies to deliver scalable solutions.
+          </p>
+          <p class="text-muted fs-5" data-aos="fade-up" data-aos-duration="500">
+    My technical expertise spans building AI-integrated agents, complex CRM automation pipelines, and robust desktop applications using C++ and Qt. I focus on creating efficient, maintainable systems that streamline operations and enhance end-user experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- Metrics Grid -->
+      <div class="row g-4">
+
+        <!-- Metric 1 -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="500">
+          <div class="card h-100 p-4 custom-stat-card">
+            <div class="stat-icon mb-4">
+              <i class="bi bi-robot"></i>
+            </div>
+            <div class="fs-1 fw-bolder mb-1 stat-number" data-target="5">0+</div>
+            <div class="text-muted fw-bold text-uppercase stat-label">AI
+              Systems Built</div>
+          </div>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 custom-stat-card" data-aos="fade-up" data-aos-duration="500">
+            <div class="stat-icon mb-4">
+              <i class="bi bi-cpu"></i>
+            </div>
+            <div class="fs-1 fw-bolder mb-1 stat-number" data-target="7">0+</div>
+            <div class="text-muted fw-bold text-uppercase stat-label">
+              Automation Projects</div>
+          </div>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 custom-stat-card" data-aos="fade-up" data-aos-duration="500">
+            <div class="stat-icon mb-4">
+              <i class="bi bi-plug"></i>
+            </div>
+            <div class="fs-1 fw-bolder mb-1 stat-number" data-target="30">0+</div>
+            <div class="text-muted fw-bold text-uppercase stat-label">APIs
+              Integrated</div>
+          </div>
+        </div>
+
+        <!-- Metric 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4 custom-stat-card" data-aos="fade-up" data-aos-duration="500">
+            <div class="stat-icon mb-4">
+              <i class="bi bi-layers"></i>
+            </div>
+            <div class="fs-1 fw-bolder mb-1 stat-number" data-target="3">0+</div>
+            <div class="text-muted fw-bold text-uppercase stat-label">Full
+              Stack Apps</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="container">
+
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="500">
+        <h2 class="section-title fw-bold">Featured Projects</h2>
+        <p class="text-muted mb-0">
+          Real systems, automations, and applications I've built.
+        </p>
+      </div>
+
+      <div class="row g-4" id="projectsGrid"></div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-top">
+    <div class="container text-center py-4">
+      <small class="text-muted">© 2026 Mohammed Saleh</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Externalized Script Resource Link -->
+  <script src="js/portfolio.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+  AOS.init();
+  </script>
+</body>
+
+</html>
